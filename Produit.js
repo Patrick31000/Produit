@@ -5,14 +5,14 @@ var Produit = function(nom, prix) {
 
 var Panier = function() {
     this.totalHT = 0;
-    this.ajoute = function(Saloperie) {
-        this.totalHT = this.totalHT + Saloperie.prix;
-        this.totalTTC = (this.totalHT * 1.20);
+    this.ajoute = function(Epicerie) {
+        this.totalHT = Math.ceil(this.totalHT + Epicerie.prix);
+        this.totalTTC = Math.ceil(this.totalHT * 1.20);
     };
 
-    this.retire = function(Saloperie) {
-        this.totalHT = this.totalHT - Saloperie.prix;
-        this.totalTTC = (this.totalHT * 1.20);
+    this.retire = function(Epicerie) {
+        this.totalHT = Math.ceil(this.totalHT - Epicerie.prix);
+        this.totalTTC = Math.ceil(this.totalHT * 1.20);
 
     };
 };
